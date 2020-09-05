@@ -1,17 +1,140 @@
-/* Error: Can't find stylesheet to import.
- *    ,
- * 10 | @import 'components/header';
- *    |         ^^^^^^^^^^^^^^^^^^^
- *    '
- *   assets\css\sass\main.scss 10:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a    \2577 \a 10 \2502  @import 'components/header';\d\a    \2502          ^^^^^^^^^^^^^^^^^^^\a    \2575 \a   assets\\css\\sass\\main.scss 10:9  root stylesheet";
+/* querys */
+:root {
+  --primary: #edece4;
+  --secondary: #cbc6b9;
+  --dark-gray: #988c77;
+  --brown: #2a2426;
+  --green: #1ab912;
+  --red: #e50914;
+  --font-1: "PT Mono", monospace;
+  --font-2: "Aref Ruqaa", serif;
+  --font-normal: 1.125em;
+  --font-sm: 0.8rem;
+  --font-md: 1.5rem;
+  --font-lg: 2rem;
+  --font-xl: 2.2rem;
+  --line-height-normal: 1.94;
+  --line-height-md: 1.5;
+  --page-max-width: 1280px;
+  --num-grid-columns: 12;
 }
+@media screen and (max-width: 62em) {
+  :root {
+    --page-max-width: 960px;
+    --num-grid-columns: 8;
+  }
+}
+@media screen and (max-width: 48em) {
+  :root {
+    --page-max-width: 720px;
+    --num-grid-columns: 4;
+  }
+}
+@media screen and (max-width: 36em) {
+  :root {
+    --page-max-width: 540px;
+    --num-grid-columns: 4;
+  }
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.row {
+  max-width: var(--page-max-width);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--num-grid-columns), 1fr);
+  gap: 0 20px;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* BREAKPOINT 576px */
+@media (min-width: 36em) {
+  .container {
+    max-width: var(--page-max-width);
+  }
+}
+/* BREAKPOINT 768px */
+@media (min-width: 48em) {
+  .container {
+    max-width: var(--page-max-width);
+  }
+}
+/* BREAKPOINT 992px */
+@media (min-width: 62em) {
+  .container {
+    max-width: 960px;
+  }
+}
+/* BREAKPOINT 1200px */
+@media (min-width: 75em) {
+  .container {
+    max-width: var(--page-max-width);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
